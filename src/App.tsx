@@ -10,6 +10,7 @@ import Treks from "./pages/Treks";
 import TrekDetail from "./pages/TrekDetail";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/" element={<Index />} />
