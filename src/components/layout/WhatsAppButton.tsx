@@ -17,7 +17,7 @@ export function WhatsAppButton({
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group animate-pulse-glow"
+    className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105"
       style={{ 
         boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
       }}

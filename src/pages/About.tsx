@@ -40,7 +40,7 @@ const values = [
   {
     icon: Heart,
     title: 'Passion for Adventure',
-    description: 'We're trekkers first. Our love for mountains drives everything we do.',
+    description: "We're trekkers first. Our love for mountains drives everything we do.",
   },
   {
     icon: Users,
@@ -50,7 +50,7 @@ const values = [
   {
     icon: Target,
     title: 'Sustainability',
-    description: 'Leave no trace. We're committed to preserving the natural beauty we explore.',
+    description: "Leave no trace. We're committed to preserving the natural beauty we explore.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-20 md:py-32 overflow-hidden text-[#2a555e]">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1920&q=80"
@@ -78,9 +78,9 @@ export default function About() {
         </div>
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-primary font-medium mb-4">About Trek-Nation</p>
+            <p className="font-medium mb-4">About Trek-Nation</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Born from a Love for <span className="text-gradient-orange">Mountains</span>
+              Born from a Love for <span className="text-gradient">Mountains</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               We're a team of passionate trekkers on a mission to help you discover the transformative power of the mountains.
@@ -90,12 +90,12 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-muted/30 border-y border-border/50">
+      <section className="py-12 bg-muted/30 border-y border-border/50 text-[#2a555e]">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-display text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</p>
+                <p className="font-display text-3xl md:text-4xl font-bold mb-1">{stat.value}</p>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-muted/20">
+      <section className="py-16 md:py-16 bg-muted/20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">What We Stand For</h2>
@@ -160,7 +160,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-16">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
@@ -187,7 +187,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-16 md:py-24 bg-muted/20">
+      <section className="py-16 md:py-16 bg-muted/20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Meet the Team</h2>
@@ -213,7 +213,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
+      <section className="py-8 md:py-16">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">

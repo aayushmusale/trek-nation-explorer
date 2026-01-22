@@ -55,7 +55,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    phone: '', 
     subject: '',
     message: '',
   });
@@ -84,7 +84,7 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-muted/50 to-background">
+      <section className="py-16 md:py-14 bg-gradient-to-b from-muted/50 to-background">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -97,12 +97,12 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-6">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-card rounded-2xl border border-border/50 p-6 md:p-8">
+              <div className="bg-card rounded-2xl border border-border/50 p-6 md:p-8 bg-[#2a555e]">
                 <h2 className="font-display text-2xl font-bold mb-6">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -37,17 +37,17 @@ export function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#2a555e] backdrop-blur-lg border-b border-border/50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <Mountain className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+              {/* <Mountain className="h-8 w-8 text-primary transition-transform group-hover:scale-110" /> */}
               <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className="font-display text-xl md:text-2xl font-bold text-foreground">
-              Trek<span className="text-primary">-Nation</span>
+            <span className="font-display text-xl md:text-2xl font-bold text-[#dae5e8]">
+              <span className="text-[#dae5e8] ">Trek-Nation</span>
             </span>
           </Link>
 
@@ -58,11 +58,11 @@ export function Navbar() {
                 <DropdownMenu key={link.label}>
                   <DropdownMenuTrigger asChild>
                     <button
-                      className={cn(
-                        'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors',
+                    className={cn(
+                        'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-[#dae5e8] hover:text-[#E9C46A] hover:bg-[#E9C46A]/10',
                         isActive(link.href)
-                          ? 'text-primary bg-primary/10'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                          ? 'text-[#E9C46A] bg-[#E9C46A]/10'
+                          : ''
                       )}
                     >
                       {link.label}
@@ -87,7 +87,7 @@ export function Navbar() {
                     'px-4 py-2 text-sm font-medium rounded-lg transition-colors',
                     isActive(link.href)
                       ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      : 'text-[#dae5e8] hover:text-foreground hover:bg-muted'
                   )}
                 >
                   {link.label}
@@ -98,14 +98,14 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button asChild className="bg-gradient-cta shadow-glow-sm hover:shadow-glow transition-shadow">
+            <Button asChild className="bg-[#E9C46A] hover:bg-[#E9C46A]/90 text-[#0B1E2D] font-semibold transition-all duration-300 hover:scale-105">
               <Link to="/treks">Explore Treks</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-[#dae5e8]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -120,7 +120,7 @@ export function Navbar() {
                 <div key={link.label}>
                   {link.children ? (
                     <div className="space-y-1">
-                      <span className="px-4 py-2 text-sm font-medium text-muted-foreground">
+                      <span className="px-4 py-2 text-sm font-medium text-[#dae5e8]">
                         {link.label}
                       </span>
                       <div className="pl-4 space-y-1">
@@ -130,10 +130,10 @@ export function Navbar() {
                             to={child.href}
                             onClick={() => setMobileMenuOpen(false)}
                             className={cn(
-                              'block px-4 py-2 text-sm rounded-lg transition-colors',
+                              'block px-4 py-2 text-sm rounded-lg transition-colors text-[#dae5e8] hover:text-[#E9C46A] hover:bg-[#E9C46A]/10',
                               isActive(child.href)
-                                ? 'text-primary bg-primary/10'
-                                : 'text-foreground hover:bg-muted'
+                                ? 'text-[#E9C46A] bg-[#E9C46A]/10'
+                                : ''
                             )}
                           >
                             {child.label}
@@ -146,10 +146,10 @@ export function Navbar() {
                       to={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        'block px-4 py-2 text-sm font-medium rounded-lg transition-colors',
+                        'block px-4 py-2 text-sm font-medium rounded-lg transition-colors text-[#dae5e8] hover:text-[#E9C46A] hover:bg-[#E9C46A]/10',
                         isActive(link.href)
-                          ? 'text-primary bg-primary/10'
-                          : 'text-foreground hover:bg-muted'
+                          ? 'text-[#E9C46A] bg-[#E9C46A]/10'
+                          : ''
                       )}
                     >
                       {link.label}
@@ -158,7 +158,7 @@ export function Navbar() {
                 </div>
               ))}
               <div className="pt-4 px-4">
-                <Button asChild className="w-full bg-gradient-cta">
+                <Button asChild className="w-full bg-[#E9C46A] hover:bg-[#E9C46A]/90 text-[#0B1E2D] font-semibold transition-all duration-300 hover:scale-105">
                   <Link to="/treks" onClick={() => setMobileMenuOpen(false)}>
                     Explore Treks
                   </Link>

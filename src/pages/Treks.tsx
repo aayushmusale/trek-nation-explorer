@@ -12,14 +12,15 @@ import {
   getTripsByCategory,
   TripCategory,
   DifficultyLevel,
-} from '@/data/trips';
+} from '../data/trips';
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '../components/ui/select';
 
 const difficultyLevels: DifficultyLevel[] = ['easy', 'moderate', 'challenging', 'extreme'];
 const durationOptions = ['1 Day', '2 Days', '3-5 Days', '6+ Days'];
@@ -28,13 +29,13 @@ function TrekCard({ trip }: { trip: typeof trips[0] }) {
   return (
     <Link
       to={`/trek/${trip.slug}`}
-      className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all hover:shadow-lg flex flex-col"
+      className="group bg-white shadow-md rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:scale-105 flex flex-col"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={trip.image}
           alt={trip.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-3 left-3">
           <span className={`text-xs font-medium px-2 py-1 rounded-full border ${getDifficultyBadgeClass(trip.difficulty)}`}>
@@ -42,7 +43,7 @@ function TrekCard({ trip }: { trip: typeof trips[0] }) {
           </span>
         </div>
         {trip.originalPrice && (
-          <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+          <div className="absolute top-3 right-3 bg-[#E9C46A] text-[#0B1E2D] text-xs font-bold px-2 py-1 rounded-full">
             {Math.round((1 - trip.price / trip.originalPrice) * 100)}% OFF
           </div>
         )}
@@ -51,7 +52,7 @@ function TrekCard({ trip }: { trip: typeof trips[0] }) {
         <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
           <MapPin className="h-3 w-3" /> {trip.location}
         </div>
-        <h3 className="font-display font-semibold mb-1 group-hover:text-primary transition-colors">
+        <h3 className="font-display font-semibold mb-1 group-hover:text-primary transition-colors duration-300">
           {trip.name}
         </h3>
         <p className="text-sm text-muted-foreground mb-3 line-clamp-2 flex-1">{trip.tagline}</p>
@@ -62,7 +63,7 @@ function TrekCard({ trip }: { trip: typeof trips[0] }) {
               {trip.duration}
             </span>
             <span className="flex items-center gap-1">
-              <Star className="h-3 w-3 text-trek-gold fill-trek-gold" />
+              <Star className="h-3 w-3 text-[#E9C46A] fill-[#E9C46A]" />
               {trip.rating}
             </span>
           </div>
@@ -70,7 +71,7 @@ function TrekCard({ trip }: { trip: typeof trips[0] }) {
             {trip.originalPrice && (
               <p className="text-xs text-muted-foreground line-through">{formatPrice(trip.originalPrice)}</p>
             )}
-            <p className="font-semibold text-primary">{formatPrice(trip.price)}</p>
+            <p className="font-semibold text-[#E9C46A]">{formatPrice(trip.price)}</p>
           </div>
         </div>
       </div>
@@ -134,25 +135,29 @@ export default function Treks() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-muted/50 to-background">
-        <div className="container px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80)' }}>
+        <div className="absolute inset-0 bg-[#0B1E2D]/70"></div>
+        <div className="relative container px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             {currentCategory ? (
               <>
                 <div className="text-4xl mb-4">{currentCategory.icon}</div>
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
                   {currentCategory.name}
                 </h1>
-                <p className="text-lg text-muted-foreground">{currentCategory.description}</p>
+                <p className="text-lg text-white/90">{currentCategory.description}</p>
               </>
             ) : (
               <>
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  Explore All <span className="text-gradient-orange">Treks</span>
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+                  Explore All <span className="text-[#E9C46A]">Treks</span>
                 </h1>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-white/90">
                   Discover adventures across Sahyadris, Himalayas, and beyond
                 </p>
+                {/* <Button className="mt-6 bg-[#E9C46A] hover:bg-[#E9C46A]/90 text-[#0B1E2D] font-semibold px-8 py-3 transition-all duration-300 hover:scale-105">
+                  <Link to="/treks">Explore Treks</Link>
+                </Button> */}
               </>
             )}
           </div>
@@ -197,7 +202,7 @@ export default function Treks() {
         <div className="container px-4 sm:px-6 lg:px-8">
           {/* Search and Filter Bar */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <div className="relative flex-1">
+            <div className="relative flex-1 border-2 rounded-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search treks by name or location..."
@@ -216,7 +221,8 @@ export default function Treks() {
                 Filters
               </Button>
               <div className={`${showFilters ? 'flex' : 'hidden'} sm:flex gap-2 flex-1 sm:flex-initial`}>
-                <Select value={selectedDifficulty} onValueChange={setSelectedDifficulty}>
+                <div className="border-2 rounded-md">
+                  <Select value={selectedDifficulty} onValueChange={setSelectedDifficulty}>
                   <SelectTrigger className="w-full sm:w-[150px]">
                     <SelectValue placeholder="Difficulty" />
                   </SelectTrigger>
@@ -229,6 +235,8 @@ export default function Treks() {
                     ))}
                   </SelectContent>
                 </Select>
+                </div>
+                <div className="border-2 rounded-md">
                 <Select value={selectedDuration} onValueChange={setSelectedDuration}>
                   <SelectTrigger className="w-full sm:w-[140px]">
                     <SelectValue placeholder="Duration" />
@@ -242,6 +250,7 @@ export default function Treks() {
                     ))}
                   </SelectContent>
                 </Select>
+                </div>
               </div>
             </div>
           </div>

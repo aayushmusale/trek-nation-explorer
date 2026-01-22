@@ -16,11 +16,11 @@ import {
   Heart,
   Backpack,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Layout } from '@/components/layout/Layout';
-import { getTripBySlug, formatPrice, getDifficultyBadgeClass, categoryInfo } from '@/data/trips';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import InquiryForm from '@/components/forms/InquiryForm';
+import { Button } from '../components/ui/button';
+import { Layout } from '../components/layout/Layout';
+import { getTripBySlug, formatPrice, getDifficultyBadgeClass, categoryInfo } from '../data/trips';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import InquiryForm from '../components/forms/InquiryForm';
 
 function ImageGallery({ images, name }: { images: string[]; name: string }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,6 +57,7 @@ export default function TrekDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [showInquiryForm, setShowInquiryForm] = useState(false);
   const trip = slug ? getTripBySlug(slug) : undefined;
+
 
   if (!trip) {
     return (
@@ -361,12 +362,12 @@ export default function TrekDetail() {
               </div>
 
               {/* Need Help */}
-              <div className="p-6 rounded-xl bg-primary/5 border border-primary/20 text-center">
+              <div className="p-6 rounded-xl bg-gradient-cta border border-primary/20 text-center">
                 <h4 className="font-semibold mb-2">Need Help?</h4>
                 <p className="text-sm text-muted-foreground mb-3">
                   Our adventure experts are here to help you plan your perfect trek.
                 </p>
-                <Button asChild variant="outline" size="sm">
+                <Button asChild variant="outline" size="sm" className='bg-accent hover:bg-accent/90 text-accent-foreground border-none'>
                   <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
                     Chat on WhatsApp
                   </a>

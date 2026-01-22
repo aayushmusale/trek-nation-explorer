@@ -8,70 +8,70 @@
 
 @layer base {
   :root {
-    /* Dark adventure theme as default */
-    --background: 220 20% 8%;
-    --foreground: 60 9% 98%;
+    /* Trek-Nation Professional Theme */
+    --background: 210 17% 98%; /* #F8F9FA */
+    --foreground: 214 31% 15%; /* #1A202C */
 
-    --card: 220 18% 12%;
-    --card-foreground: 60 9% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 214 31% 15%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 60 9% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 31% 15%;
 
-    /* Adventure Orange - Primary CTA color */
-    --primary: 25 95% 53%;
-    --primary-foreground: 220 20% 8%;
+    /* Accent Gold - Primary CTA color */
+    --primary: 45 80% 65%; /* #E9C46A */
+    --primary-foreground: 210 60% 10%; /* #0B1E2D */
 
-    /* Mountain Blue - Secondary accent */
-    --secondary: 200 80% 50%;
-    --secondary-foreground: 60 9% 98%;
+    /* Light gray for secondary elements */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 214 31% 15%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 210 17% 96%;
+    --muted-foreground: 214 40% 35%;
 
-    /* Accent - Forest Green for success/nature elements */
-    --accent: 150 60% 40%;
-    --accent-foreground: 60 9% 98%;
+    /* Success Green for success elements */
+    --accent: 142 76% 36%; /* #22C55E */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 60 9% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 25 95% 53%;
+    --border: 210 20% 88%;
+    --input: 210 17% 96%;
+    --ring: 45 80% 65%;
 
     --radius: 0.75rem;
 
-    /* Trek-specific tokens */
-    --trek-orange: 25 95% 53%;
-    --trek-orange-glow: 30 100% 60%;
-    --trek-blue: 200 80% 50%;
-    --trek-blue-deep: 210 90% 35%;
-    --trek-green: 150 60% 40%;
-    --trek-gold: 45 100% 50%;
-    --trek-dark: 220 20% 8%;
-    --trek-darker: 220 25% 5%;
-    --trek-surface: 220 18% 12%;
-    --trek-surface-light: 220 15% 18%;
+    /* Trek-specific tokens - Updated to new palette */
+    --trek-orange: 45 80% 65%; /* Accent Gold */
+    --trek-orange-glow: 45 85% 70%;
+    --trek-blue: 210 17% 95%; /* Light background */
+    --trek-blue-deep: 210 60% 10%; /* Primary Dark */
+    --trek-green: 142 76% 36%; /* Success Green */
+    --trek-gold: 45 80% 65%; /* Accent Gold */
+    --trek-dark: 210 60% 10%; /* Primary Dark #0B1E2D */
+    --trek-darker: 210 65% 8%;
+    --trek-surface: 210 17% 96%;
+    --trek-surface-light: 210 17% 98%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(220 20% 8% / 0.3) 0%, hsl(220 25% 5%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 18% 14%) 0%, hsl(220 18% 10%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(30 100% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210 60% 10% / 0.7) 0%, hsl(210 60% 10% / 0.3) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 17% 96%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(45 80% 65%) 0%, hsl(45 85% 60%) 100%);
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
-    --shadow-card: 0 10px 40px -10px hsl(220 25% 5% / 0.8);
-    --shadow-elevated: 0 25px 50px -12px hsl(220 25% 5% / 0.9);
+    --shadow-glow: 0 0 40px hsl(45 80% 65% / 0.3);
+    --shadow-card: 0 10px 15px -3px hsl(210 60% 10% / 0.1), 0 4px 6px -2px hsl(210 60% 10% / 0.05);
+    --shadow-elevated: 0 25px 50px -12px hsl(210 60% 10% / 0.25);
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 60 9% 98%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 220 20% 8%;
-    --sidebar-accent: 220 15% 18%;
-    --sidebar-accent-foreground: 60 9% 98%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 25 95% 53%;
+    --sidebar-background: 210 60% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 80% 65%;
+    --sidebar-primary-foreground: 210 60% 10%;
+    --sidebar-accent: 210 17% 96%;
+    --sidebar-accent-foreground: 214 31% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 45 80% 65%;
   }
 
   /* Light mode override if needed */
@@ -174,5 +174,9 @@
     50% {
       box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
     }
+  }
+
+  .text-shadow-hero {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
